@@ -1,0 +1,41 @@
+# makefile...
+
+APPNAME=test
+CC=g++
+CFLAGS=-c -Wall
+INCDIRS=-I/usr/include/gtk-2.0 -I/usr/lib/gtk-2.0/include 
+L_GL_FLAGS=-lGL -lGLU
+L_GTK_FLAGS=-lgtkglext-x11-1.0 -lgdkglext-x11-1.0
+OBJS=main.o Vector3d.o CLeaf.o CRoot.o CBranch.o CPlant.o CRand.o LabelledWidget.o TextureMgr.o Scene.o
+
+project : $(OBJS)
+	$(CC) $(OBJS) $(L_GL_FLAGS) -o $(APPNAME)
+
+
+main.o : main.c LabelledWidget.o
+	$(CC) $(CFLAGS) main.c
+
+Vector3d.o : Vector3d.c Vector3d.h
+	$(CC) $(CFLAGS) Vector3d.c
+
+CLeaf.o : CLeaf.c CLeaf.h Vector3d.h Vector3d.c Scene.h Scene.c
+	$(CC) $(CFLAGS) CLeaf.c
+
+CRoot.o : CRoot.c CRoot.h Vector3d.h Vector3d.c Scene.h Scene.c
+	$(CC) $(CFLAGS) CRoot.c
+
+CBranch.o : CBranch.c CBranch.h Vector3d.h Vector3d.c CRoot.c CRoot.h CLeaf.h CLeaf.c
+	$(CC) $(CFLAGS) CBranch.c
+
+CPlant.o : CPlant.c CPlant.h Vector3d.o CBranch.c CBranch.h CLeaf.c CLeaf.h CRoot.h CRoot.c CRand.c CRand.o
+	$(CC) $(CFLAGS) CPlant.c
+
+CRand.o : CRand.c CRand.h
+	$(CC) $(CFLAGS) CRand.c
+
+LabelledWidget.o : LabelledWidget.c LabelledWidget.h
+	$(CC) $(CFLAGS) LabelledWidget.c
+
+TextureMgr.o : TextureMgr.c TextureMgr.h
+	$(CC) $(CFLAGS) TextureMgr.c
+
