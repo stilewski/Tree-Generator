@@ -10,7 +10,7 @@ GTK_LIB=-lgtkglext-x11-1.0 -lgdkglext-x11-1.0 -lglib-2.0 -lgtk-x11-2.0 -lX11 -lg
 GL_INC=
 GL_LIB=-lGL -lGLU
 
-INC=-I/usr/include/gtk-2.0 -I/usr/lib/gtk-2.0/include -I/usr/include/atk-1.0 -I/usr/include/cairo -I/usr/include/pango-1.0 -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/directfb -I/usr/include/libpng12 -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/gtkglext-1.0 -I/usr/lib/gtkglext-1.0/include
+INC=-I/usr/include/gtk-2.0 -I/usr/lib/gtk-2.0/include -I/usr/include/atk-1.0 -I/usr/include/cairo -I/usr/include/pango-1.0 -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/directfb -I/usr/include/libpng12 -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/lib/x86_64-linux-gnu/glib-2.0/include/ -I/usr/include/gdk-pixbuf-2.0/ -I/usr/include/gtkglext-1.0 -I/usr/lib/gtkglext-1.0/include
 
 L_GTK_FLAGS=-lgtkglext-x11-1.0 -lgdkglext-x11-1.0
 OBJS=main.o Vector3d.o CLeaf.o CRoot.o CBranch.o CPlant.o CRand.o LabelledWidget.o TextureMgr.o Scene.o

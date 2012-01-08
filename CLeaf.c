@@ -69,7 +69,7 @@ void CLeaf::GenerateList()
 
 
     glEnable( GL_TEXTURE_2D );
-    glBindTexture( GL_TEXTURE_2D, TextureMgr::GetInstance().m_Textures[ 0 ].texID );
+    glBindTexture( GL_TEXTURE_2D, TextureMgr::GetInstance()->m_Textures[ 0 ].texID );
     glBegin( GL_QUADS );
         glColor3f( 0.0f, 1.0f, 0.1f );
         glTexCoord2f( 0.0f, 0.0f ); glVertex3f( pos.x - size, pos.y, pos.z );
@@ -89,7 +89,7 @@ void CLeaf::DrawLeaf( void )
 
 
     glEnable( GL_TEXTURE_2D );
-    glBindTexture( GL_TEXTURE_2D, TextureMgr::GetInstance().m_Textures[ 0 ].texID );
+    glBindTexture( GL_TEXTURE_2D, TextureMgr::GetInstance()->m_Textures[ 0 ].texID );
     glBegin( GL_QUADS );
         glColor3f( 0.0f, 1.0f, 0.1f );
         glTexCoord2f( 0.0f, 0.0f ); glVertex3f( pos.x - size, pos.y, pos.z );

@@ -1,6 +1,7 @@
 #include "TextureMgr.h"
 #include <stdlib.h>
 #include <cstring>
+#include <stdio.h>
 
 TextureMgr::TextureMgr()
 {

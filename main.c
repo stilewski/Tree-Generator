@@ -55,7 +55,7 @@ void render( void )
     glColor3f( 1.0f, 1.0f, 1.0f );
 
     glEnable( GL_TEXTURE_2D );
-    glBindTexture( GL_TEXTURE_2D, TextureMgr::GetInstance().m_Textures[ 2 ].texID );
+    glBindTexture( GL_TEXTURE_2D, TextureMgr::GetInstance()->m_Textures[ 2 ].texID );
     glBegin( GL_QUADS );
         glTexCoord2d(0.0,0.0); glVertex3f( -80.0f, -40.0f, -80.0f );
         glTexCoord2d(1.0,0.0); glVertex3f( 80.0f, -40.0f, -80.0f );
@@ -67,7 +67,7 @@ void render( void )
     glTranslatef( Xtrans, Ytrans, -8.0f + Ztrans );
     glRotatef( YRot, 0.0f, 1.0f, 0.0f );
 
-    glBindTexture( GL_TEXTURE_2D, TextureMgr::GetInstance().m_Textures[ 3 ].texID );
+    glBindTexture( GL_TEXTURE_2D, TextureMgr::GetInstance()->m_Textures[ 3 ].texID );
     glBegin( GL_QUADS );
         glTexCoord2d(0.0,0.0); glVertex3f( -6.0f, -4.0f, -8.0f );
         glTexCoord2d(1.0,0.0); glVertex3f( 6.0f, -4.0f, -8.0f );
@@ -172,7 +172,7 @@ static void mouse_motion_cb( GtkWidget* widget, GdkEventMotion* event, gpointer 
 
 static void mouse_click_cb( GtkWidget* widget, GdkEventMotion* event, gpointer user_data )
 {
-    if( event->state & GDK_SHIFT_MASK == GDK_SHIFT_MASK )
+    if( ( event->state & GDK_SHIFT_MASK ) == GDK_SHIFT_MASK )
         dragging = !dragging;
     else
         rolling = !rolling;
@@ -313,10 +313,10 @@ static void realize_main( GtkWidget* w )
 	if( !gdk_gl_drawable_gl_begin( glDrawable, glContext ) )
         g_assert_not_reached();
 
-    TextureMgr::GetInstance().LoadTGA( "leaf.tga" );
-    TextureMgr::GetInstance().LoadTGA( "tree.tga" );
-    TextureMgr::GetInstance().LoadTGA( "sky.tga" );
-    TextureMgr::GetInstance().LoadTGA( "grass.tga" );
+    TextureMgr::GetInstance()->LoadTGA( "leaf.tga" );
+    TextureMgr::GetInstance()->LoadTGA( "tree.tga" );
+    TextureMgr::GetInstance()->LoadTGA( "sky.tga" );
+    TextureMgr::GetInstance()->LoadTGA( "grass.tga" );
 
     InitGL();
     gdk_gl_drawable_gl_end( glDrawable );
@@ -460,7 +460,7 @@ GtkWidget* construct_menu( void )
     GtkWidget* bar;
     GtkWidget* fileItem, *editItem, *viewItem, *aboutItem;
     GtkWidget* fileMenu, *openItem, *saveItem, *exportOBJItem, *quitItem;
-    GtkWidget* exportSubMenu;
+    // GtkWidget* exportSubMenu; // unused
 
     bar = gtk_menu_bar_new();
     fileItem = gtk_menu_item_new_with_label( "Plik" );
@@ -505,7 +505,7 @@ int main( int argc, char **argv )
 
     GtkWidget*          table;
     GdkGLConfig*        GLconf;
-    GdkGLContext*       GLContext;
+    // GdkGLContext*       GLContext; // unused
     GtkWidget*          v_box;
 
     gtk_init( &argc, &argv );
