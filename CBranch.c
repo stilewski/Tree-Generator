@@ -1,8 +1,9 @@
+#include <iostream>
+#include <stdio.h>
 #include "CBranch.h"
 #include "CRoot.h"
 #include "CLeaf.h"
 #include <vector>
-#include <stdio.h>
 
 CBranch::CBranch()
 {
@@ -53,7 +54,7 @@ void CBranch::DrawTris( void )
 
 void CBranch::Simplify( void )
 {
-    printf( "There was %d wooden segments. Now there are", m_Segments.size() );
+    std::cout <<  "There was " << m_Segments.size() << " wooden segments. Now there are";
     if( m_Segments.size() > 1 )
     {
         std::vector< CRoot > tmp;
@@ -95,7 +96,7 @@ void CBranch::Simplify( void )
 
         //m_Segments.insert( m_Segments.begin(), R );
     }
-    printf( " %d.\n", m_Segments.size() );
+    std::cout <<  m_Segments.size() << std::endl;
 }
 
 

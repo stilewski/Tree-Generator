@@ -4,7 +4,7 @@
 #include "Singleton.h"
 #include "common.h"
 
-class CScene : public Singleton< CScene >
+class CScene : public cSingleton< CScene >
 {
     public:
     CScene();
@@ -20,6 +20,6 @@ class CScene : public Singleton< CScene >
     bool m_Texturing;
 };
 
-#define scene CScene::GetInstancePtr()
+#define scene CScene::GetInstance()
 
 #endif // SCENE_H

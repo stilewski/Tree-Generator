@@ -25,7 +25,7 @@ typedef struct
 } Texture_t;
 
 
-class TextureMgr : public Singleton< TextureMgr >
+class TextureMgr : public cSingleton< TextureMgr >
 {
     public:
     TextureMgr();

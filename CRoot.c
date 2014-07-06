@@ -27,7 +27,7 @@ void CRoot::GenerateList( void )
     if( scene->IsTexturing() )
     {
         glEnable( GL_TEXTURE_2D );
-        glBindTexture( GL_TEXTURE_2D, TextureMgr::GetInstance().m_Textures[ 1 ].texID );
+        glBindTexture( GL_TEXTURE_2D, TextureMgr::GetInstance()->m_Textures[ 1 ].texID );
 
         glBegin( GL_TRIANGLE_STRIP );
             glColor3f( 0.6f, 0.4f, 0.0f );

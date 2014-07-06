@@ -489,7 +489,7 @@ void CPlant::GeneratePlantB( Vector3d v, number len, number width, number angle,
     number length_decrement = 0.995f;
     Vector3d v1;
 
-    bool catch_ = true;
+    // bool catch_ = true; // unused
     uint opened = 0;
     uint nRoots = 0;
 
@@ -621,7 +621,7 @@ void CPlant::GeneratePlant( Vector3d v, number len, number width, number angle, 
     number length_decrement = 0.995f;
     Vector3d v1;
 
-    bool catch_ = true;
+    // bool catch_ = true; // unused
     uint opened = 0;
     uint nRoots = 0;
 
